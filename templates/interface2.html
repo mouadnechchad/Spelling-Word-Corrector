@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/icon type">
+    <title>Words Spelling Checker</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='interface.css') }}">
+</head>
+<body>
+    <br>
+    <div id="mainPage">
+        <h1>Words Spelling Checker</h1>
+        <div id="form">
+            <form id="correction-form">
+                
+
+                <div class="double">
+                    <textarea name="user_input" id="news_text" placeholder="Enter a word to correct..." cols="132" rows="5" required></textarea>
+                </div>
+                <div id="features">
+                    <label for="word_choices">Select a number of corrected words:</label>
+                    <select id="word_choices" name="word_choices">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div id="button">
+                    <button id="submit-button" type="button" onclick="submitForm();">Correct</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div id="features">
+            <div class="double">
+                <textarea id="text" placeholder="The 5 most probable corrections for your input word" name="corrected_text" cols="132" rows="5">{{ ",".join(corrected_text) }}</textarea>
+            </div>
+        </div>
+        <!-- ... (rest of the HTML) ... -->
+    </div>
+    <footer>&copy;&nbsp;2023 Checker. All rights reserved.</footer>
+
+    
+    <script>
+        function submitForm() {
+            console.log("submitForm() called"); // Debugging message
+            var userInput = $("#news_text").val();
+            console.log("User Input:", userInput); // Log the user input
+            var selectedChoice = $("#word_choices").val();
+            console.log("Selected Choice:", selectedChoice); 
+
+            $.ajax({
+                type: "POST",
+                url: "/",
+                data: {
+                    user_input: userInput,
+                    word_choices: selectedChoice // Include the selected choice in the data
+                },
+                success: function(data) {
+                    // Update the #text textarea with the corrected text
+                    $("#text").val(data.corrected_text);
+                },
+                dataType: "json" // Ensure that the response is treated as JSON
+            });
+        }
+    </script>
+</body>
+</html>

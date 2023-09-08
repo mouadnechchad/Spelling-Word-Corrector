@@ -1,0 +1,166 @@
+body{
+    background-image: linear-gradient(#111111a7,#d3d1d19c), url("img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+*{
+    font-family: Georgia, Helvetica, sans-serif;
+    color:white;
+    margin:0;
+}
+
+
+p a{
+    text-decoration:underline;
+    color:rgb(255, 255, 255);
+}
+
+h1,p{
+    text-align: center;
+    font-weight: bold;
+}
+h1{
+    font-size: 2.3rem;
+    color:rgba(255, 255, 255, 0.961);
+    text-shadow: 0px 0px 15px #323232;
+}
+#form{
+    display:flex;
+    flex-direction: column;
+
+}
+p{
+    text-shadow: 0px 0px 15px #ffffff;
+    font-size: 1.5rem;
+}
+textarea{
+    background-color: #efefefcf;
+    color:black;
+    text-align: center;
+    font-weight: serif;
+    font-size: 1.5rem;
+    padding-top:20px;
+    width:100%; 
+    margin:auto;
+    border-radius: 10px;
+    border:none;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+.double{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    width:70%;
+}
+#features {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    margin-top: 10px; /* Adjust the top margin as needed */
+}
+/* Style the dropdown select */
+select#word_choices {
+    width: 5%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #efefefcf;
+    color: black;
+    font-size: 1.2rem;
+    margin: 5px auto; /* Center horizontally and add margin to the top and bottom */
+}
+
+/* Style the individual options */
+select#word_choices option {
+    font-size: 1rem;
+    padding: 2px;
+    background-color: white;
+    color: black;
+}
+
+/* Style the hover effect for options */
+select#word_choices option:hover {
+    background-color: #007f00;
+    color: white;
+}
+
+#submit-button {
+    margin: auto;
+    display: block;
+    width: 70%;
+    height: 47px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(5, 19, 57);
+    color: rgba(255, 253, 253, 0.954);
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: ease 0.25s;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#submit-button:hover {
+    background-color: green;
+    color: white;
+    transition: ease 0.25s;
+}
+
+#mainPage{
+    margin-bottom: 100px;
+}
+h4{
+    display:block;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width:50%;
+    margin:auto;
+}
+h5{
+    display:block;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width:40%;
+    margin:auto;
+}
+footer{
+    position:fixed;
+    bottom:5px;
+    left:1px;
+    right:1px;
+    height:35px;
+    text-align: center;
+    display:block;
+    margin-top:10px;
+    background-color: rgb(5, 19, 57);
+    margin-bottom: 0;
+    padding-top: 10px;
+    margin: auto;
+}
+/* Style pour le bouton */
+#redirectionButton {
+    display: block;
+    margin: 0 auto; /* Centre horizontalement le bouton */
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer; /* Change le curseur en main au survol */
+    transition: background-color 0.25s, color 0.25s; /* Transition douce au survol */
+}
+
+/* Style au survol du bouton */
+#redirectionButton:hover {
+    background-color: #007f00; /* Couleur différente au survol */
+    color: white;
+}
